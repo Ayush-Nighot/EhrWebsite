@@ -1,0 +1,23 @@
+<div class="appointments-container">
+    <h2>Canceled Appointments</h2>
+  
+    <!-- Check if there are no canceled appointments -->
+    <div *ngIf="app.length === 0" class="no-appointments">
+      <p>No canceled appointments found.</p>
+    </div>
+  
+    <!-- Loop through the appointments and show details -->
+    <div *ngFor="let appointment of app" class="appointment-item">
+      <div class="appointment-info" *ngFor="let item of ob" >
+        <p><strong>{{ item.firstName }} {{ item.lastName }}</strong></p>
+        <span>Appointment Date: {{ appointment.appointmentDate | date }}</span><br>
+        <span>Status: {{ appointment.status}}</span>
+        
+        <!-- Show reason for cancellation if available -->
+        <div *ngIf="appointment.cancellationReason">
+          <p><strong>Reason for Cancellation:</strong> {{ appointment.cancellationReason }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

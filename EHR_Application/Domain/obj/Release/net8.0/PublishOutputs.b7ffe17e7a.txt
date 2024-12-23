@@ -1,0 +1,3 @@
+C:\Users\lenovo\Desktop\Ehr\EHR_Application\EHR_Application\publish\Domain.dll
+C:\Users\lenovo\Desktop\Ehr\EHR_Application\EHR_Application\publish\Domain.deps.json
+C:\Users\lenovo\Desktop\Ehr\EHR_Application\EHR_Application\publish\Domain.pdb

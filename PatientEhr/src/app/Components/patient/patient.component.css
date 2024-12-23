@@ -1,0 +1,190 @@
+/* General layout for appointment list */
+.appointment-list {
+  padding: 20px;
+}
+
+.appointment-list h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.appointment-cards {
+  list-style-type: none;
+  padding: 0;
+}
+
+.appointment-card {
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+  padding: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.appointment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.appointment-details {
+  padding: 10px 0;
+}
+
+.appointment-details h3 {
+  font-size: 1.25rem;
+  margin-bottom: 5px;
+}
+
+.appointment-details p {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+/* Icons styling */
+.appointment-details i {
+  margin-right: 8px;
+}
+
+/* Status badge */
+.status-scheduled {
+  color: #f39c12;
+}
+
+.status-completed {
+  color: #28a745;
+}
+
+.appointment-status span {
+  display: flex;
+  align-items: center;
+}
+
+/* Buttons styling */
+.update-btn, .cancel-btn, .chat-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.update-btn:hover, .cancel-btn:hover, .chat-btn:hover {
+  background-color: #0056b3;
+}
+
+.cancel-btn {
+  background-color: #dc3545;
+}
+
+.cancel-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.chat-btn {
+  background-color: #17a2b8;
+}
+
+.chat-btn:hover {
+  background-color: #138496;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  width: 400px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.modal-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+button[type="submit"]:disabled {
+  background-color: #ccc;
+}
+
+button[type="button"] {
+  background-color: #6c757d;
+}
+
+button[type="button"]:hover {
+  background-color: #5a6268;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+.loading i {
+  margin-right: 10px;
+}
+
+.no-appointments {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+.no-appointments i {
+  margin-right: 10px;
+}
+
+/* Loader styling */
+app-loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  z-index: 1001;
+}
+
+/* Show the loader when active */
+app-loader.show {
+  display: block;
+}

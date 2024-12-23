@@ -1,0 +1,44 @@
+<div class="container mt-5 pb-5 otp-verify">
+    <div class="card shadow-lg rounded-4">
+      <div class="card-body p-4">
+        <h5 class="card-title text-center mb-4">Verify OTP</h5>
+  
+        <!-- Email Form -->
+        <form
+          [formGroup]="otpForm"
+          (ngSubmit)="onSubmit()"
+        >
+          <!-- OTP Field -->
+          <div class="mb-4">
+            <label for="otp" class="form-label">OTP</label>
+            <input
+              type="text"
+              class="form-control rounded-3"
+              id="otp"
+              formControlName="otp"
+              placeholder="Enter OTP"
+              maxlength="6"
+              required
+            />
+            <div
+              *ngIf="otpForm.get('otp')?.invalid && otpForm.get('otp')?.touched"
+              class="text-danger small mt-1"
+            >
+              OTP is required and should be 6 digits.
+            </div>
+          </div>
+  
+          
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            [disabled]="otpForm.invalid"
+            class="btn btn-primary w-100 rounded-3 py-2 transition-all"
+          >
+            Verify OTP
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <app-loader></app-loader>

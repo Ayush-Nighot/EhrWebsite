@@ -1,0 +1,31 @@
+<div class="chat-container">
+    <!-- Header with recipient name -->
+    <div class="chat-header">
+      <h2>{{ receiverName }}</h2>
+    </div>
+  
+    <!-- Chat messages area -->
+    <div class="messages">
+      <div
+        *ngFor="let msg of messages"
+        class="message"
+        [ngClass]="{ 'sent-message': msg.senderId == senderId, 'received-message': msg.senderId !== senderId }"
+      >
+        <p class="message-text">
+        
+          {{ msg.message }}
+        </p>
+      </div>
+    </div>
+  
+    <!-- Input area -->
+    <div class="message-box">
+      <textarea
+        [(ngModel)]="message"
+        placeholder="Type your message"
+        class="message-input"
+      ></textarea>
+      <button (click)="sendMessage(receiverId!, message)" class="send-button">Send</button>
+    </div>
+  </div>
+  

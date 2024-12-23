@@ -1,0 +1,102 @@
+
+/* General Navbar Styling */
+.navbar {
+  background-color: #f7f7f7; /* Light background for the navbar */
+  border-bottom: 2px solid #004085; /* Subtle blue border */
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Logo Styling */
+.logo-wrapper svg {
+  fill: #004085; /* Primary accent color */
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand-text {
+  color: #004085;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+/* Hover Effects for Links */
+.nav-link {
+  color: #555;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  transition: color 0.3s, transform 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link i {
+  margin-right: 0.5rem;
+}
+
+.nav-link:hover {
+  color: #004085;
+  transform: translateX(5px); /* Smooth horizontal shift for interaction */
+}
+
+.nav-link.active {
+  color: #004085;
+  font-weight: bold;
+}
+
+/* Profile Dropdown Button */
+.btn-profile {
+  background-color: #004085;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  padding: 5px;
+  width: 45px;
+  height: 45px;
+  transition: transform 0.3s ease;
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.btn-profile:hover {
+  transform: scale(1.1); /* Slight zoom effect when hovered */
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  min-width: 200px;
+  border-radius: 8px;
+}
+
+.dropdown-item {
+  color: #333;
+  font-size: 0.9rem;
+  padding: 12px 20px;
+  transition: background-color 0.3s;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1; /* Subtle hover effect */
+}
+
+.dropdown-divider {
+  border-color: #ddd;
+}
+
+/* Mobile-Friendly Responsive Design */
+@media (max-width: 992px) {
+  .navbar-collapse {
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+  }
+
+  .nav-link {
+    padding: 1rem;
+  }
+
+  .navbar-toggler-icon {
+    background-color: #004085;
+  }
+}

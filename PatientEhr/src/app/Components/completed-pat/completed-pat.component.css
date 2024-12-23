@@ -1,0 +1,407 @@
+/* Style for the modal popup */
+.soap-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);  /* Dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0; /* Initially hidden */
+    visibility: hidden; /* Initially hidden */
+    transition: opacity 0.3s ease, visibility 0s ease 0.3s; /* Fade in/out */
+  }
+  
+  /* When the modal is visible, it will be shown with opacity 1 */
+  .soap-modal.show {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0s ease 0s;
+  }
+  
+  /* Modal content styling */
+  .modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 70%;
+    max-width: 700px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  /* Keyframe animation for the modal fade-in */
+  @keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  
+  /* Close button styling */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    color: #f44336; /* Red color for the close button */
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .close-btn:hover {
+    color: #d32f2f; /* Darker red when hovering */
+  }
+  
+  /* Modal content header styling */
+  .modal-content h3 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Text styling for SOAP notes */
+  .modal-content p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  /* Highlight labels */
+  .modal-content strong {
+    font-weight: 600;
+    color: #333;
+  }
+  
+  /* Responsive Design for Mobile */
+  @media (max-width: 768px) {
+    .modal-content {
+        width: 85%;  /* Reduce width on smaller screens */
+        padding: 20px;
+    }
+  
+    .modal-content h3 {
+        font-size: 20px;  /* Adjust font size */
+    }
+  
+    .close-btn {
+        font-size: 22px;  /* Adjust close button size */
+    }
+  }
+  
+  /* Style for the modal popup */
+  .soap-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%;
+    max-width: 600px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Close button style */
+  .close-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  
+  /* General Container Styling */
+  .appointments-container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Heading Styles */
+    h2 {
+      font-size: 26px;
+      font-weight: 600;
+      color: #333;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    /* No Appointments Message */
+    .no-appointments {
+      text-align: center;
+      font-size: 18px;
+      color: #888;
+    }
+    
+    /* Appointment Item Styling */
+    .appointment-item {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    /* Hover effect for appointment items */
+    .appointment-item:hover {
+      background-color: #f1f1f1;
+      border-color: #bbb;
+      transform: translateY(-5px);
+    }
+    
+    /* Appointment Info Container */
+    .appointment-info {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #444;
+    }
+    
+    /* Patient Name Styling */
+    .appointment-info strong {
+      font-size: 18px;
+      color: #333;
+      display: block;
+      margin-bottom: 10px;
+    }
+    
+    /* Appointment Date and Status */
+    .appointment-info span {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #555;
+    }
+    
+    /* Status Text Styling */
+    .appointment-info .status-scheduled {
+      color: #28a745; /* Green for Scheduled */
+    }
+    
+    .appointment-info .status-completed {
+      color: #007bff; /* Blue for Completed */
+    }
+    
+    /* Reason for Cancellation Section */
+    .appointment-info .cancellation-reason {
+      margin-top: 15px;
+      font-size: 14px;
+      font-style: italic;
+      color: #e74c3c; /* Red for cancellation reason */
+    }
+    
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .appointments-container {
+        padding: 15px;
+      }
+    
+      h2 {
+        font-size: 22px;
+      }
+    
+      .appointment-info {
+        font-size: 14px;
+      }
+      
+      .appointment-item {
+        padding: 15px;
+      }
+    }
+    /* General Container Styling */
+  .appointments-container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Heading Styles */
+    h2 {
+      font-size: 26px;
+      font-weight: 600;
+      color: #333;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    /* No Appointments Message */
+    .no-appointments {
+      text-align: center;
+      font-size: 18px;
+      color: #888;
+    }
+    
+    /* Appointment Item Styling */
+    .appointment-item {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    /* Hover effect for appointment items */
+    .appointment-item:hover {
+      background-color: #f1f1f1;
+      border-color: #bbb;
+      transform: translateY(-5px);
+    }
+    
+    /* Appointment Info Container */
+    .appointment-info {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #444;
+    }
+    
+    /* Patient Name Styling */
+    .appointment-info strong {
+      font-size: 18px;
+      color: #333;
+      display: block;
+      margin-bottom: 10px;
+    }
+    
+    /* Appointment Date and Status */
+    .appointment-info span {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #555;
+    }
+    
+    /* Status Text Styling */
+    .appointment-info .status-scheduled {
+      color: #28a745; /* Green for Scheduled */
+    }
+    
+    .appointment-info .status-completed {
+      color: #007bff; /* Blue for Completed */
+    }
+    
+    /* Reason for Cancellation Section */
+    .appointment-info .cancellation-reason {
+      margin-top: 15px;
+      font-size: 14px;
+      font-style: italic;
+      color: #e74c3c; /* Red for cancellation reason */
+    }
+    
+    /* View SOAP Button */
+    .view-soap-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 15px;
+      background-color: #007bff;
+      color: #fff;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    
+    /* Hover effect for View SOAP button */
+    .view-soap-btn:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+    
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .appointments-container {
+        padding: 15px;
+      }
+    
+      h2 {
+        font-size: 22px;
+      }
+    
+      .appointment-info {
+        font-size: 14px;
+      }
+      
+      .appointment-item {
+        padding: 15px;
+      }
+    
+      .view-soap-btn {
+        padding: 8px 16px;
+        font-size: 14px;
+      }
+    }
+    /* Style for the modal popup */
+  .soap-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s, opacity 0.5s ease-in-out;
+    }
+    
+    .soap-modal.show {
+      visibility: visible;
+      opacity: 1;
+    }
+    
+    .modal-content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      width: 60%;
+      max-width: 600px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .close-btn {
+      background-color: #f44336;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    

@@ -1,0 +1,301 @@
+.form-group {
+  position: relative;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.input-group .form-control {
+  border-right: none; /* Prevent border overlap with button */
+}
+
+.input-group-append {
+  position: absolute;
+  right: 10px; /* Adjust spacing inside the input field */
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-group-append i {
+  font-size: 1.2rem; /* Adjust icon size */
+  color: #6c757d; /* Neutral color for better visibility */
+}
+
+/* Button Group for Provider and Patient */
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+/* Button Styling for Provider and Patient */
+.option-btn {
+  padding: 16px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  width: 200px;
+  text-align: center;
+}
+
+/* Specific Colors for Provider and Patient Buttons */
+.option-btn:first-child {  /* Provider button */
+  background-color: #4a90e2;
+  color: white;
+}
+
+.option-btn:first-child:hover {
+  background-color: #357ab7;
+  transform: scale(1.05);
+}
+
+.option-btn:last-child {  /* Patient button */
+  background-color: #34c759;
+  color: white;
+}
+
+.option-btn:last-child:hover {
+  background-color: #28a745;
+  transform: scale(1.05);
+}
+
+/* Focus Styles */
+.option-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(75, 144, 226, 0.4); /* Provider button focus */
+}
+
+.option-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(52, 199, 89, 0.4); /* Patient button focus */
+}
+
+/* Container for the entire form */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f7fc;
+  padding: 40px 20px;
+}
+
+/* Form Card Styling */
+.form-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1000px;
+  padding: 50px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Title Styling */
+.form-title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+/* Form Grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+/* Form Group Styling */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 16px;
+  color: #555;
+}
+
+/* Input and Textarea Styles */
+.form-control {
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s;
+  background-color: #fafafa;
+  width: 100%;
+}
+
+.form-control:focus {
+  border-color: #4a90e2;
+}
+
+textarea.form-control {
+  height: 120px;
+  resize: vertical;
+}
+
+/* Error Message Styling */
+.error-message {
+  font-size: 14px;
+  color: #e74c3c;
+  margin-top: 5px;
+}
+
+/* Buttons */
+.btn {
+  padding: 16px 32px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.primary-btn {
+  background-color: #4a90e2;
+  color: white;
+}
+
+.primary-btn:hover {
+  background-color: #357ab7;
+  transform: scale(1.05);
+}
+
+.secondary-btn {
+  background-color: #f7f9fb;
+  color: #4a90e2;
+  border: 1px solid #4a90e2;
+}
+
+.secondary-btn:hover {
+  background-color: #f0f4f8;
+  transform: scale(1.05);
+}
+
+/* Button Group */
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-card {
+    padding: 30px;
+  }
+  
+  .form-title {
+    font-size: 28px;
+  }
+}
+
+/* Profile Image Section */
+#profileImage {
+  padding: 12px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  display: block;
+  margin-top: 20px;
+}
+
+#profileImage:focus {
+  border-color: #4a90e2;
+}
+
+/* Date Picker and Select Input Styling */
+input[type="datetime-local"], select.form-control {
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #fafafa;
+  width: 100%;
+  transition: border-color 0.3s;
+}
+
+input[type="datetime-local"]:focus, select.form-control:focus {
+  border-color: #4a90e2;
+}
+
+/* Form Actions Section */
+.form-actions {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 40px;
+}
+
+/* Form Field Spacing */
+.form-group {
+  margin-bottom: 30px;
+}
+
+.form-actions button {
+  min-width: 180px;
+  font-weight: 600;
+}
+
+/* Enhanced Form Elements */
+input.form-control:focus, select.form-control:focus, textarea.form-control:focus {
+  background-color: #eaf3ff;
+  border-color: #4a90e2;
+}
+
+textarea.form-control {
+  padding: 16px;
+}
+
+.form-card input,
+.form-card select,
+.form-card textarea {
+  margin-bottom: 20px;
+}
+
+.option-text {
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Heading Style */
+.form-title {
+  font-size: 32px;
+  margin-bottom: 50px;
+}

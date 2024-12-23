@@ -1,0 +1,190 @@
+<div class="modal-header border-0 p-4">
+    <h5 class="modal-title text-center w-100">User Profile</h5>
+</div>
+
+<div class="modal-body p-5">
+    <div class="profile-card shadow-lg">
+        <div class="profile-card-body">
+            <!-- Profile Image Section -->
+            <div class="profile-img-wrapper">
+                <img [src]="userDataForm.get('profileImage')?.value || 'default-profile.jpg'" alt="Profile Image"
+                    class="profile-img">
+            </div>
+
+            <!-- Profile Image Upload Section (Only visible in edit mode) -->
+            <div class="upload-section" *ngIf="isEditMode">
+                <input type="file" (change)="onFileChange($event)" class="upload-input">
+            </div>
+
+            <!-- User Information Section -->
+            <form [formGroup]="userDataForm" class="user-profile-form">
+                <div class="grid-container">
+                    <!-- First Name -->
+                    <div class="form-item">
+                        <label for="firstName">First Name:</label>
+                        <input *ngIf="isEditMode" formControlName="firstName" class="input-field"
+                            placeholder="First Name" required>
+                        <p *ngIf="!isEditMode">{{ userDataForm.get('firstName')?.value }}</p>
+                        <small *ngIf="userDataForm.get('firstName')?.invalid && userDataForm.get('firstName')?.touched"
+                            class="error-text">
+                            First Name is required.
+                        </small>
+                    </div>
+
+                    <!-- Last Name -->
+                    <div class="form-item">
+                        <label for="lastName">Last Name:</label>
+                        <input *ngIf="isEditMode" formControlName="lastName" class="input-field" placeholder="Last Name"
+                            required>
+                        <p *ngIf="!isEditMode">{{ userDataForm.get('lastName')?.value }}</p>
+                        <small *ngIf="userDataForm.get('lastName')?.invalid && userDataForm.get('lastName')?.touched"
+                            class="error-text">
+                            Last Name is required.
+                        </small>
+                    </div>
+
+                    <!-- Email -->
+                    <div *ngIf="!isEditMode" class="form-item">
+                        <label for="email">Email:</label>
+                        <p>{{ userDataForm.get('email')?.value }}</p>
+                    </div>
+
+                    <!-- Username -->
+                    <div *ngIf="!isEditMode" class="form-item">
+                        <label for="username">Username:</label>
+                        <p>{{ userDataForm.get('userName')?.value }}</p>
+                    </div>
+
+                    <!-- Mobile -->
+                    <div class="form-item">
+                        <label for="mobile">Mobile:</label>
+                        <input *ngIf="isEditMode" formControlName="mobile" [max]="maxDate" class="input-field"
+                            placeholder="Mobile" (input)="restrictInput($event)" required>
+                        <p *ngIf="!isEditMode">{{ userDataForm.get('mobile')?.value }}</p>
+                        <small *ngIf="userDataForm.get('mobile')?.invalid && userDataForm.get('mobile')?.touched"
+                            class="error-text">
+                            Mobile is required and must be a valid number.
+                        </small>
+                    </div>
+
+                    <!-- Date of Birth -->
+                    <div class="form-item">
+                        <label for="dob">DOB:</label>
+                        <input *ngIf="isEditMode" m formControlName="dateOfBirth" class="input-field"
+                            type="datetime-local" required>
+                        <p *ngIf="!isEditMode">{{ userDataForm.get('dateOfBirth')?.value | date }}</p>
+                        <small
+                            *ngIf="userDataForm.get('dateOfBirth')?.invalid && userDataForm.get('dateOfBirth')?.touched"
+                            class="error-text">
+                            Date of Birth is required.
+                        </small>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="form-item">
+                        <label for="address">Address:</label>
+                        <input *ngIf="isEditMode" formControlName="address" class="input-field" placeholder="Address"
+                            required>
+                        <p *ngIf="!isEditMode">{{ userDataForm.get('address')?.value }}</p>
+                        <small *ngIf="userDataForm.get('address')?.invalid && userDataForm.get('address')?.touched"
+                            class="error-text">
+                            Address is required.
+                        </small>
+                    </div>
+
+                    <!-- City -->
+                    <div class="form-item">
+                        <label for="city">City:</label>
+                        <input *ngIf="isEditMode" formControlName="city" class="input-field" placeholder="City"
+                            required>
+                        <p *ngIf="!isEditMode">{{ userDataForm.get('city')?.value }}</p>
+                    </div>
+
+                    <!-- Country -->
+                    <!-- <div class="form-item">
+                        <label for="country">Country:</label>
+                        <input *ngIf="isEditMode" formControlName="country" class="input-field" placeholder="Country" required>
+                        <p *ngIf="!isEditMode">{{ userDataForm.get('country')?.value }}</p>
+                    </div> -->
+
+                    <!-- State -->
+                    <!-- <div class="form-item">
+                        <label for="state">State:</label>
+                        <input *ngIf="isEditMode" formControlName="state" class="input-field" placeholder="State" required>
+                        <p *ngIf="!isEditMode">{{ userDataForm.get('state')?.value }}</p>
+                    </div> -->
+
+
+                    <!-- Country Dropdown -->
+                    <div class="form-item">
+                        <label for="country">Country:</label>
+                        <select *ngIf="isEditMode" formControlName="country" class="input-field"
+                            (change)="onCountryChange()" required>
+                            <option *ngFor="let country of countries" [value]="country.name">{{ country.name }}</option>
+                        </select>
+                        <p *ngIf="!isEditMode">{{ userDataForm.get('country')?.value }}</p>
+                    </div>
+
+                    <!-- State Dropdown -->
+                    <div class="form-item">
+                        <label for="state">State:</label>
+                        <select *ngIf="isEditMode" formControlName="state" class="input-field" required>
+                            <option *ngFor="let state of states" [value]="state.name">{{ state.name }}</option>
+                        </select>
+                        <p *ngIf="!isEditMode">{{ userDataForm.get('state')?.value }}</p>
+                    </div>
+
+                    <!-- Pin Code -->
+                    <div class="form-item">
+                        <label for="pinCode">Pin Code:</label>
+                        <input *ngIf="isEditMode" formControlName="pinCode" class="input-field" placeholder="Pin Code"
+                            required>
+                        <p *ngIf="!isEditMode">{{ userDataForm.get('pinCode')?.value }}</p>
+                        <small *ngIf="userDataForm.get('pinCode')?.invalid && userDataForm.get('pinCode')?.touched"
+                            class="error-text">
+                            Pin Code is required and must be valid.
+                        </small>
+                    </div>
+
+                    <!-- Provider-specific Fields (Only visible if userId === 1) -->
+                    <div *ngIf="isProvider">
+                        <div class="form-item">
+                            <label for="qualification">Qualification:</label>
+                            <input *ngIf="isEditMode" formControlName="qualification" class="input-field"
+                                placeholder="Qualification">
+                            <p *ngIf="!isEditMode">{{ userDataForm.get('qualification')?.value }}</p>
+                        </div>
+
+                        <div class="form-item">
+                            <label for="specializationId">Specialization ID:</label>
+                            <input *ngIf="isEditMode" formControlName="specializationId" class="input-field"
+                                placeholder="Specialization ID">
+                            <p *ngIf="!isEditMode">{{ userDataForm.get('specializationId')?.value }}</p>
+                        </div>
+
+                        <div class="form-item">
+                            <label for="registrationNumber">Registration Number:</label>
+                            <input *ngIf="isEditMode" formControlName="registrationNumber" class="input-field"
+                                placeholder="Registration Number">
+                            <p *ngIf="!isEditMode">{{ userDataForm.get('registrationNumber')?.value }}</p>
+                        </div>
+
+                        <div class="form-item">
+                            <label for="visitingCharge">Visiting Charge:</label>
+                            <input *ngIf="isEditMode" formControlName="visitingCharge" class="input-field"
+                                placeholder="Visiting Charge">
+                            <p *ngIf="!isEditMode">{{ userDataForm.get('visitingCharge')?.value }}</p>
+                        </div>
+                    </div>
+
+                    <!-- Button Section -->
+                    <div class="form-action-buttons">
+                        <button *ngIf="!isEditMode" class="btn btn-primary" (click)="toggleEditMode()">Edit</button>
+                        <button *ngIf="isEditMode" class="btn btn-success" (click)="updateProfile()">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<app-loader></app-loader>

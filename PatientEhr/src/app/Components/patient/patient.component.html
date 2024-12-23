@@ -1,0 +1,83 @@
+<div class="appointment-list">
+  <h1>Your Appointments</h1>
+
+  <button routerLink="/add-appointment" class="btn btn-primary">
+    <i class="fas fa-plus"></i> Add Appointment
+  </button>
+
+  <div *ngIf="loading" class="loading">
+    <i class="fas fa-spinner fa-spin"></i> Loading...
+  </div>
+
+  <div *ngIf="appointments.length === 0 && !loading" class="no-appointments">
+    <i class="fas fa-calendar-times"></i> No appointments scheduled.
+  </div>
+
+  <!-- List of Appointments -->
+  <ul *ngIf="appointments.length > 0" class="appointment-cards">
+    <li *ngFor="let appointment of appointments" class="appointment-card">
+      <div class="appointment-details">
+        <h3 class="provider-name">
+          <i class="fas fa-user-md"></i> Provider: {{ appointment.providerName }}
+        </h3>
+        <p class="specialty">
+          <i class="fas fa-stethoscope"></i> Speciality: {{ appointment.speciality }}
+        </p>
+        <p class="appointment-date">
+          <i class="fas fa-calendar-alt"></i> Date: {{ appointment.appointmentDate | date:'MM/dd/yyyy' }}
+        </p>
+        <p class="appointment-time">
+          <i class="fas fa-clock"></i> Time: {{ appointment.appointmentTime | date:'hh:mm a' }}
+        </p>
+        <p class="appointment-status">
+          <span [ngClass]="appointment.status === 'Scheduled' ? 'status-scheduled' : 'status-completed'">
+            <i class="fas" [ngClass]="appointment.status === 'Scheduled' ? 'fa-hourglass-start' : 'fa-check-circle'"></i>
+            {{ appointment.status }}
+          </span>
+        </p>
+
+        <!-- Update Button -->
+        <button 
+          class="update-btn" 
+          (click)="openUpdateForm(appointment)">
+          <i class="fas fa-pencil-alt"></i> Update
+        </button>
+
+        <button 
+          class="cancel-btn" 
+          (click)="cancelAppointment(appointment.id)" 
+          [disabled]="appointment.status === 'Completed'">
+          <i class="fas fa-times-circle"></i> Cancel
+        </button>
+        <button clsss="chat-btn" (click)="openChatForAppointment(appointment.providerId)" class="btn btn-info">
+          Chat <i class="fas fa-comment"></i>
+        </button> 
+      </div>
+    </li>
+  </ul>
+
+  <!-- Modal for Updating Appointment -->
+  <div *ngIf="isModalOpen" class="modal-overlay" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <h3>Update Appointment</h3>
+      <form [formGroup]="appointmentForm" (ngSubmit)="updateAppointment()">
+        <div class="form-group">
+          <label for="appointmentDate">Appointment Date</label>
+          <input type="date" formControlName="appointmentDate" class="form-control" id="appointmentDate">
+        </div>
+        <div class="form-group">
+          <label for="appointmentTime">Appointment Time</label>
+          <input type="time" formControlName="appointmentTime" class="form-control" id="appointmentTime">
+        </div>
+        <div class="form-group">
+          <label for="chiefComplaint">Chief Complaint</label>
+          <textarea formControlName="chiefComplaint" class="form-control" id="chiefComplaint"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="appointmentForm.invalid">Update Appointment</button>
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancel</button>
+        
+      </form>
+    </div>
+  </div>
+</div>
+<app-loader></app-loader>

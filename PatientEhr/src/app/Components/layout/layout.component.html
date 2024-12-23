@@ -1,0 +1,66 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+  <div class="container-fluid">
+    <!-- Custom Logo -->
+    <a class="navbar-brand d-flex align-items-center">
+      <div class="logo-wrapper me-2">
+        <!-- Health-related Icon (Stethoscope) -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-stethoscope text-primary" viewBox="0 0 16 16">
+          <path d="M11.5 1a2.5 2.5 0 0 0-2.5 2.5v4a2.5 2.5 0 0 0-5 0V3.5A2.5 2.5 0 0 0 4.5 1a2.5 2.5 0 0 0-2.5 2.5v7a4.5 4.5 0 0 0 9 0v-7a2.5 2.5 0 0 0-2.5-2.5zM12 7.5V3.5a1.5 1.5 0 0 0-3 0v4a1.5 1.5 0 0 0 3 0z"/>
+        </svg>
+      </div>
+      <span class="navbar-brand-text">EHR</span>
+    </a>
+
+    <!-- Navbar Toggler -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible Links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li *ngIf="decodedtokem.role == 'Provider'" class="nav-item">
+          <a class="nav-link active hover-highlight" routerLink="/provider">
+            <i class="bi bi-person-plus-fill"></i> Provider
+          </a>
+        </li>
+        <li *ngIf="decodedtokem.role == 'Provider'" class="nav-item">
+          <a class="nav-link active hover-highlight" routerLink="/canceled">
+            <i class="bi bi-x-circle-fill"></i> Canceled
+          </a>
+        </li>
+        <li *ngIf="decodedtokem.role == 'Provider'" class="nav-item">
+          <a class="nav-link active hover-highlight" routerLink="/completed">
+            <i class="bi bi-check-circle-fill"></i> Completed
+          </a>
+        </li>
+        <li *ngIf="decodedtokem.role == 'Patient'" class="nav-item">
+          <a class="nav-link active hover-highlight" routerLink="/completedpt">
+            <i class="bi bi-check-circle-fill"></i> Completed
+          </a>
+        </li>
+        <li *ngIf="decodedtokem.role == 'Patient'" class="nav-item">
+          <a class="nav-link active hover-highlight" routerLink="/patient">
+            <i class="bi bi-person-lines-fill"></i> Patient
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Profile Dropdown -->
+   <!-- Profile Dropdown -->
+   <div class="dropdown ms-3">
+    <button class="btn-profile shadow-sm" data-bs-toggle="dropdown">
+      <img src="{{ imageUrl }}" alt="Profile" class="profile-img" />
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end custom-dropdown">
+      <li><a class="dropdown-item" routerLink="/profile">Profile</a></li>
+      <li><a class="dropdown-item" routerLink="/changepass">Change Password</a></li>
+      <li><hr class="dropdown-divider" /></li>
+      <li><a class="dropdown-item text-danger" (click)="logout()">Logout</a></li>
+    </ul>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

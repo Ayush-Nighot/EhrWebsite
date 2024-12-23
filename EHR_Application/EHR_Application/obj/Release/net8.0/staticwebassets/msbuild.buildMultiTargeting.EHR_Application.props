@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\EHR_Application.props" />
+</Project>

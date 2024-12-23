@@ -1,0 +1,109 @@
+<div *ngIf="!showSoapForm && !showUpdateForm" class="container">
+  <!-- Left side (Patient List) - Smaller Section -->
+  <div class="patients-list">
+    <h2>Patient List</h2>
+
+    <div class="patient-item" *ngFor="let patient of patients">
+      <div class="patient-info">
+        <p><strong>{{ patient.firstName }} {{ patient.lastName }}</strong></p>
+        <span>Email: {{ patient.email }}</span><br />
+        <span>Mobile: {{ patient.mobile }}</span>
+      </div>
+      <div class="actions">
+        <button (click)="addAppointment(patient.id)">Add Appointment</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right side (Appointments List with Action Buttons) -->
+  <div class="appointments-section sections" *ngIf="!showSoapForm && !showUpdateForm">
+    <h2>Appointments</h2>
+
+    <div class="appointment-item" *ngFor="let appointment of appointments">
+      <div class="appointment-info">
+        <p><strong>{{ appointment.patient.firstName }} {{ appointment.patient.lastName }}</strong></p>
+        <span>Appointment Date: {{ appointment.appointmentDate | date }}</span><br />
+        <span>Chief Complain: {{ appointment.chiefComplaint}}</span><br />
+        <span>Status: {{ appointment.status == 'Scheduled' ? 'Scheduled' : 'Completed' }}</span>
+      </div>
+      <div class="actions">
+        <button (click)="cancelAppointment(appointment.id)" class="cancel-btn">Cancel 
+          <i class="fas fa-times"></i>
+        </button>
+        <button (click)="showUpdateFormForAppointment(appointment)" class="update-btn">Update 
+          <i class="fas fa-edit"></i>
+        </button>
+        <button (click)="showSoapFormForCompletion(appointment.id)" class="complete-btn">Complete 
+          <i class="fas fa-check-circle"></i>
+        </button>
+
+        <button (click)="openChatForAppointment(appointment.patientId)" class="chat-btn">
+          <i class="fas fa-comment"></i> Chat
+        </button>
+
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+<!-- SOAP Form Modal -->
+<div *ngIf="showSoapForm" class="soap-form-container">
+  <div class="soap-form">
+    <h3>SOAP Notes for Appointment</h3>
+    <form (ngSubmit)="submitSoapForm()">
+      <div class="form-group">
+        <label for="subjective">Subjective:</label>
+        <textarea id="subjective" maxlength="150" [(ngModel)]="soapData.subjective" name="subjective" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="objective">Objective:</label>
+        <textarea id="objective" maxlength="150" [(ngModel)]="soapData.objective" name="objective" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="assessment">Assessment:</label>
+        <textarea id="assessment" maxlength="150" [(ngModel)]="soapData.assessment" name="assessment" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="plan">Plan:</label>
+        <textarea id="plan" maxlength="150" [(ngModel)]="soapData.plan" name="plan" required></textarea>
+      </div>
+      <div class="form-buttons">
+        <button type="submit" class="submit-btn">Submit SOAP</button>
+        <button type="button" (click)="showSoapForm = false" class="cancel-btn">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Update Appointment Form Modal -->
+<div *ngIf="showUpdateForm" class="update-form-container" [ngClass]="{ 'show': showUpdateForm }">
+  <div class="update-form">
+    <h3>Update Appointment</h3>
+    <form (ngSubmit)="submitUpdateForm()">
+      <div class="form-group">
+        <label for="appointmentDate">Appointment Date:</label>
+        <input type="date" id="appointmentDate" [min]="maxDate" [(ngModel)]="updateData.appointmentDate" name="appointmentDate" required />
+      </div>
+
+      <div class="form-group">
+        <label for="appointmentTime">Appointment Time:</label>
+        <input
+          type="time"
+          id="appointmentTime"
+          [(ngModel)]="updateData.appointmentTime"
+          name="appointmentTime"
+          [min]="minTime"
+          required
+        />
+      </div>
+
+      <div class="form-buttons">
+        <button type="submit" class="submit-btn">Update Appointment</button>
+        <button type="button" (click)="cancelUpdate()" class="cancel-btn">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+<app-loader></app-loader>

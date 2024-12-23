@@ -1,0 +1,233 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\lenovo\\Desktop\\Ehr\\EHR_Application\\EHR_Application\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7362D922-57A4-40EA-AB5F-959ABD7F0AFA}|Core\\Core.csproj|c:\\users\\lenovo\\desktop\\ehr\\ehr_application\\ehr_application\\core\\services\\stripeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7362D922-57A4-40EA-AB5F-959ABD7F0AFA}|Core\\Core.csproj|solutionrelative:core\\services\\stripeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01A27A46-661A-4BDC-AC8D-2D7AB5DFDBF9}|EHR_Application\\EHR_Application.csproj|c:\\users\\lenovo\\desktop\\ehr\\ehr_application\\ehr_application\\ehr_application\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{01A27A46-661A-4BDC-AC8D-2D7AB5DFDBF9}|EHR_Application\\EHR_Application.csproj|solutionrelative:ehr_application\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7362D922-57A4-40EA-AB5F-959ABD7F0AFA}|Core\\Core.csproj|c:\\users\\lenovo\\desktop\\ehr\\ehr_application\\ehr_application\\core\\services\\appointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7362D922-57A4-40EA-AB5F-959ABD7F0AFA}|Core\\Core.csproj|solutionrelative:core\\services\\appointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7362D922-57A4-40EA-AB5F-959ABD7F0AFA}|Core\\Core.csproj|c:\\users\\lenovo\\desktop\\ehr\\ehr_application\\ehr_application\\core\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7362D922-57A4-40EA-AB5F-959ABD7F0AFA}|Core\\Core.csproj|solutionrelative:core\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01A27A46-661A-4BDC-AC8D-2D7AB5DFDBF9}|EHR_Application\\EHR_Application.csproj|c:\\users\\lenovo\\desktop\\ehr\\ehr_application\\ehr_application\\ehr_application\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01A27A46-661A-4BDC-AC8D-2D7AB5DFDBF9}|EHR_Application\\EHR_Application.csproj|solutionrelative:ehr_application\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7362D922-57A4-40EA-AB5F-959ABD7F0AFA}|Core\\Core.csproj|c:\\users\\lenovo\\desktop\\ehr\\ehr_application\\ehr_application\\core\\interfact\\iappdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7362D922-57A4-40EA-AB5F-959ABD7F0AFA}|Core\\Core.csproj|solutionrelative:core\\interfact\\iappdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{674DAA44-C1FD-4CFA-9F95-FFB7E18F56EF}|Infrastructure\\Infrastructure.csproj|c:\\users\\lenovo\\desktop\\ehr\\ehr_application\\ehr_application\\infrastructure\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{674DAA44-C1FD-4CFA-9F95-FFB7E18F56EF}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A0A2C7E-3708-485C-B488-54B7B375E204}|Domain\\Domain.csproj|c:\\users\\lenovo\\desktop\\ehr\\ehr_application\\ehr_application\\domain\\models\\state.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A0A2C7E-3708-485C-B488-54B7B375E204}|Domain\\Domain.csproj|solutionrelative:domain\\models\\state.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A0A2C7E-3708-485C-B488-54B7B375E204}|Domain\\Domain.csproj|c:\\users\\lenovo\\desktop\\ehr\\ehr_application\\ehr_application\\domain\\models\\country.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A0A2C7E-3708-485C-B488-54B7B375E204}|Domain\\Domain.csproj|solutionrelative:domain\\models\\country.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A0A2C7E-3708-485C-B488-54B7B375E204}|Domain\\Domain.csproj|c:\\users\\lenovo\\desktop\\ehr\\ehr_application\\ehr_application\\domain\\models\\soapnotemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A0A2C7E-3708-485C-B488-54B7B375E204}|Domain\\Domain.csproj|solutionrelative:domain\\models\\soapnotemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01A27A46-661A-4BDC-AC8D-2D7AB5DFDBF9}|EHR_Application\\EHR_Application.csproj|c:\\users\\lenovo\\desktop\\ehr\\ehr_application\\ehr_application\\ehr_application\\controllers\\appointmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01A27A46-661A-4BDC-AC8D-2D7AB5DFDBF9}|EHR_Application\\EHR_Application.csproj|solutionrelative:ehr_application\\controllers\\appointmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7362D922-57A4-40EA-AB5F-959ABD7F0AFA}|Core\\Core.csproj|c:\\users\\lenovo\\desktop\\ehr\\ehr_application\\ehr_application\\core\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7362D922-57A4-40EA-AB5F-959ABD7F0AFA}|Core\\Core.csproj|solutionrelative:core\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{674DAA44-C1FD-4CFA-9F95-FFB7E18F56EF}|Infrastructure\\Infrastructure.csproj|c:\\users\\lenovo\\desktop\\ehr\\ehr_application\\ehr_application\\infrastructure\\migrations\\20241219114832_location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{674DAA44-C1FD-4CFA-9F95-FFB7E18F56EF}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20241219114832_location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "State.cs",
+              "DocumentMoniker": "C:\\Users\\lenovo\\Desktop\\Ehr\\EHR_Application\\EHR_Application\\Domain\\Models\\State.cs",
+              "RelativeDocumentMoniker": "Domain\\Models\\State.cs",
+              "ToolTip": "C:\\Users\\lenovo\\Desktop\\Ehr\\EHR_Application\\EHR_Application\\Domain\\Models\\State.cs",
+              "RelativeToolTip": "Domain\\Models\\State.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T11:44:34.329Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Country.cs",
+              "DocumentMoniker": "C:\\Users\\lenovo\\Desktop\\Ehr\\EHR_Application\\EHR_Application\\Domain\\Models\\Country.cs",
+              "RelativeDocumentMoniker": "Domain\\Models\\Country.cs",
+              "ToolTip": "C:\\Users\\lenovo\\Desktop\\Ehr\\EHR_Application\\EHR_Application\\Domain\\Models\\Country.cs",
+              "RelativeToolTip": "Domain\\Models\\Country.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T11:44:29.387Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SoapNoteModel.cs",
+              "DocumentMoniker": "C:\\Users\\lenovo\\Desktop\\Ehr\\EHR_Application\\EHR_Application\\Domain\\Models\\SoapNoteModel.cs",
+              "RelativeDocumentMoniker": "Domain\\Models\\SoapNoteModel.cs",
+              "ToolTip": "C:\\Users\\lenovo\\Desktop\\Ehr\\EHR_Application\\EHR_Application\\Domain\\Models\\SoapNoteModel.cs",
+              "RelativeToolTip": "Domain\\Models\\SoapNoteModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T11:43:49.709Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppointmentService.cs",
+              "DocumentMoniker": "C:\\Users\\lenovo\\Desktop\\Ehr\\EHR_Application\\EHR_Application\\Core\\Services\\AppointmentService.cs",
+              "RelativeDocumentMoniker": "Core\\Services\\AppointmentService.cs",
+              "ToolTip": "C:\\Users\\lenovo\\Desktop\\Ehr\\EHR_Application\\EHR_Application\\Core\\Services\\AppointmentService.cs",
+              "RelativeToolTip": "Core\\Services\\AppointmentService.cs",
+              "ViewState": "AgIAAEIAAAAAODMzMzMBwEwAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T04:33:22.405Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\lenovo\\Desktop\\Ehr\\EHR_Application\\EHR_Application\\EHR_Application\\appsettings.json",
+              "RelativeDocumentMoniker": "EHR_Application\\appsettings.json",
+              "ToolTip": "C:\\Users\\lenovo\\Desktop\\Ehr\\EHR_Application\\EHR_Application\\EHR_Application\\appsettings.json",
+              "RelativeToolTip": "EHR_Application\\appsettings.json",
+              "ViewState": "AgIAAA4AAAAgZmZmZiYwwCMAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-19T04:23:26.664Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StripeService.cs",
+              "DocumentMoniker": "C:\\Users\\lenovo\\Desktop\\Ehr\\EHR_Application\\EHR_Application\\Core\\Services\\StripeService.cs",
+              "RelativeDocumentMoniker": "Core\\Services\\StripeService.cs",
+              "ToolTip": "C:\\Users\\lenovo\\Desktop\\Ehr\\EHR_Application\\EHR_Application\\Core\\Services\\StripeService.cs",
+              "RelativeToolTip": "Core\\Services\\StripeService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAQwA8AAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T06:00:08.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\lenovo\\Desktop\\Ehr\\EHR_Application\\EHR_Application\\Infrastructure\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\lenovo\\Desktop\\Ehr\\EHR_Application\\EHR_Application\\Infrastructure\\AppDbContext.cs",
+              "RelativeToolTip": "Infrastructure\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T11:46:41.087Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "20241219114832_location.cs",
+              "DocumentMoniker": "C:\\Users\\lenovo\\Desktop\\Ehr\\EHR_Application\\EHR_Application\\Infrastructure\\Migrations\\20241219114832_location.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20241219114832_location.cs",
+              "ToolTip": "C:\\Users\\lenovo\\Desktop\\Ehr\\EHR_Application\\EHR_Application\\Infrastructure\\Migrations\\20241219114832_location.cs",
+              "RelativeToolTip": "Infrastructure\\Migrations\\20241219114832_location.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T11:48:32.457Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IAppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\lenovo\\Desktop\\Ehr\\EHR_Application\\EHR_Application\\Core\\Interfact\\IAppDbContext.cs",
+              "RelativeDocumentMoniker": "Core\\Interfact\\IAppDbContext.cs",
+              "ToolTip": "C:\\Users\\lenovo\\Desktop\\Ehr\\EHR_Application\\EHR_Application\\Core\\Interfact\\IAppDbContext.cs",
+              "RelativeToolTip": "Core\\Interfact\\IAppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T12:08:14.478Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AppointmentController.cs",
+              "DocumentMoniker": "C:\\Users\\lenovo\\Desktop\\Ehr\\EHR_Application\\EHR_Application\\EHR_Application\\Controllers\\AppointmentController.cs",
+              "RelativeDocumentMoniker": "EHR_Application\\Controllers\\AppointmentController.cs",
+              "ToolTip": "C:\\Users\\lenovo\\Desktop\\Ehr\\EHR_Application\\EHR_Application\\EHR_Application\\Controllers\\AppointmentController.cs",
+              "RelativeToolTip": "EHR_Application\\Controllers\\AppointmentController.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAAwGwAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T09:29:13.896Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\lenovo\\Desktop\\Ehr\\EHR_Application\\EHR_Application\\EHR_Application\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "EHR_Application\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\lenovo\\Desktop\\Ehr\\EHR_Application\\EHR_Application\\EHR_Application\\Controllers\\UserController.cs",
+              "RelativeToolTip": "EHR_Application\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAH8AAAAAAAAAAAAmwIMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T09:29:10.198Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\lenovo\\Desktop\\Ehr\\EHR_Application\\EHR_Application\\Core\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "Core\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\lenovo\\Desktop\\Ehr\\EHR_Application\\EHR_Application\\Core\\Services\\UserService.cs",
+              "RelativeToolTip": "Core\\Services\\UserService.cs",
+              "ViewState": "AgIAAJIBAAAAAAAAAAAkwKkBAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T07:00:45.126Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "C:\\Users\\lenovo\\Desktop\\Ehr\\EHR_Application\\EHR_Application\\Core\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "Core\\DependencyInjection.cs",
+              "ToolTip": "C:\\Users\\lenovo\\Desktop\\Ehr\\EHR_Application\\EHR_Application\\Core\\DependencyInjection.cs",
+              "RelativeToolTip": "Core\\DependencyInjection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T07:00:44.544Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

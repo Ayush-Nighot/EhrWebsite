@@ -1,0 +1,18 @@
+2024-12-19 17:18:28.217 +05:30 [WRN] No store type was specified for the decimal property 'Fee' on entity type 'AppointmentModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-12-19 17:18:31.128 +05:30 [WRN] No store type was specified for the decimal property 'VisitingCharge' on entity type 'Usermodel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-12-19 17:18:31.259 +05:30 [WRN] No store type was specified for the decimal property 'Fee' on entity type 'AppointmentModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-12-19 17:18:31.260 +05:30 [WRN] No store type was specified for the decimal property 'VisitingCharge' on entity type 'Usermodel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-12-19 17:18:42.003 +05:30 [INF] User profile is available. Using 'C:\Users\ayushnighet\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-12-19 17:18:42.198 +05:30 [INF] Now listening on: https://localhost:7122
+2024-12-19 17:18:42.200 +05:30 [INF] Now listening on: http://localhost:5068
+2024-12-19 17:18:42.243 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-19 17:18:42.245 +05:30 [INF] Hosting environment: Development
+2024-12-19 17:18:42.246 +05:30 [INF] Content root path: C:\Users\ayushnighet\Desktop\EHRApplication\EHR_Application\EHR_Application\EHR_Application
+2024-12-19 17:18:42.511 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7122/swagger/index.html - null null
+2024-12-19 17:18:42.721 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7122/swagger/index.html - 200 null text/html;charset=utf-8 211.7669ms
+2024-12-19 17:18:42.808 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7122/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-19 17:18:42.808 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7122/_vs/browserLink - null null
+2024-12-19 17:18:42.816 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7122/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 7.737ms
+2024-12-19 17:18:42.840 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7122/_vs/browserLink - 200 null text/javascript; charset=UTF-8 31.0096ms
+2024-12-19 17:18:42.880 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7122/swagger/v1/swagger.json - null null
+2024-12-19 17:18:42.997 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7122/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 117.3197ms

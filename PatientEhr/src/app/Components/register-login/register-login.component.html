@@ -1,0 +1,312 @@
+<div class="container">
+  <!-- Login Form -->
+  <div *ngIf="!showRegisterOptions">
+    <div class="form-card">
+      <h2 class="form-title">Login</h2>
+      <form [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
+        <div class="form-group">
+          <label for="userName">Username</label>
+          <input type="text" id="userName" maxlength="25" formControlName="userName" class="form-control" placeholder="Enter username"
+            required />
+          <div *ngIf="loginForm.controls['userName'].invalid && loginForm.controls['userName'].touched"
+            class="error-message">
+            Username is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="input-group">
+            <input
+              [type]="showPassword ? 'text' : 'password'"
+              id="password"
+              formControlName="password"
+              maxlength="8"
+              class="form-control"
+              placeholder="Enter password"
+              required
+            />
+            <button
+              type="button"
+              class="btn btn-outline-secondary input-group-append"
+              (click)="togglePasswordVisibility()"
+              aria-label="Toggle password visibility"
+              style="border: none; background: transparent; padding: 0 10px;"
+            >
+              <i [class]="showPassword ? 'fa fa-eye-slash' : 'fa fa-eye'"></i>
+            </button>
+          </div>
+          <div
+            *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched"
+            class="error-message"
+          >
+            Password is required and must be at least 8 characters.
+          </div>
+        </div>
+        
+        
+
+        <div class="form-actions">
+          <button type="submit" class="btn primary-btn" >Login</button>
+          <button type="button" class="btn secondary-btn" (click)="showRegisterForm()">Register</button>
+        </div>
+      </form>
+      <!-- Forgot Password Button -->
+      <div class="mb-3 text-end">
+        <a routerLink="/forget-password" class="text-decoration-none">Forgot your password?</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Register Options -->
+  <div *ngIf="showRegisterOptions">
+      <div class="form-card">
+      <div class="mb-3 text">
+        <a (click)="show()" class="btn primary-btn">Login</a>
+      </div>
+      <h2 class="form-title">Register</h2>
+  
+      <p class="option-text">Please choose an option:</p>
+      <div class="btn-group">
+        <button class="btn option-btn" (click)="selectProvider()">Provider</button>
+        <button class="btn option-btn" (click)="selectPatient()">Patient</button>
+      </div>
+
+      <!-- Registration Form -->
+      <form [formGroup]="registerForm" (ngSubmit)="onRegisterSubmit()">
+        <div class="form-grid">
+          <!-- First Name -->
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" formControlName="firstName" class="form-control"
+              placeholder="Enter first name" maxlength="25" required />
+            <div *ngIf="registerForm.controls['firstName'].invalid && registerForm.controls['firstName'].touched"
+              class="error-message">
+              First Name is required.
+            </div>
+          </div>
+
+          <!-- Last Name -->
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" formControlName="lastName" class="form-control"
+              placeholder="Enter last name" maxlength="25" required />
+            <div *ngIf="registerForm.controls['lastName'].invalid && registerForm.controls['lastName'].touched"
+              class="error-message">
+              Last Name is required.
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" formControlName="email" class="form-control" placeholder="Enter email"
+              maxlength="30" required />
+            <div *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched"
+              class="error-message">
+              A valid email is required.
+            </div>
+          </div>
+
+          <!-- Mobile -->
+          <div class="form-group">
+            <label for="mobile">Mobile</label>
+            <input type="tel" id="mobile" formControlName="mobile" class="form-control"
+              placeholder="Enter mobile number" maxlength="10" minlength="10" required pattern="[0-9]{10}"
+              (keypress)="onKeyPress($event)" />
+            <div *ngIf="registerForm.controls['mobile'].invalid && registerForm.controls['mobile'].touched"
+              class="error-message">
+              A valid mobile number is required.
+            </div>
+          </div>
+
+          <!-- Date of Birth -->
+          <div class="form-group">
+            <label for="dateOfBirth">Date of Birth</label>
+            <input type="date" id="dateOfBirth" formControlName="dateOfBirth" class="form-control rounded-3"
+              [max]="today" required />
+            <div *ngIf="registerForm.get('dateOfBirth')?.invalid && registerForm.get('dateOfBirth')?.touched"
+              class="text-danger small mt-1">
+              <div *ngIf="registerForm.get('dateOfBirth')?.hasError('required')">
+                Date of Birth is required.
+              </div>
+            </div>
+          </div>
+
+          <!-- Gender -->
+          <div class="form-group">
+            <label for="gender">Gender</label>
+            <select id="gender" formControlName="gender" class="form-control" required>
+              <option value="">Select Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+            <div *ngIf="registerForm.controls['gender'].invalid && registerForm.controls['gender'].touched"
+              class="error-message">
+              Gender is required.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="bloodGroup">Blood Group</label>
+            <select id="bloodGroup" formControlName="bloodGroup" class="form-control" required>
+              <option value="">Select Blood Group</option>
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+            </select>
+            <div *ngIf="registerForm.controls['bloodGroup'].invalid && registerForm.controls['bloodGroup'].touched"
+              class="error-message">
+              Blood Group is required.
+            </div>
+          </div>
+          
+          <!-- Country -->
+         
+        <div class="mb-3">
+          <label for="countryId" class="form-label">Country</label>
+          <select class="form-control rounded-3" id="countryId" formControlName="country"
+            (change)="onCountryChange()">
+            <option value="">Select a country</option>
+            <option *ngFor="let country of countryList" [value]="country.name">
+              {{ country.name }}
+            </option>
+          </select>
+          <div *ngIf="registerForm.get('country')?.invalid && registerForm.get('country')?.touched"
+            class="text-danger small mt-1">
+            Country is required.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="stateId" class="form-label">State</label>
+          <select class="form-control rounded-3" id="state" formControlName="state">
+            <option value="">Select a state</option>
+            <option *ngFor="let state of states" [value]="state.name">
+              {{ state.name }}
+            </option>
+          </select>
+          <div *ngIf="registerForm.get('state')?.invalid && registerForm.get('state')?.touched"
+            class="text-danger small mt-1">
+            State is required.
+          </div>
+        </div>
+          
+          
+          <!-- City -->
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" id="city" formControlName="city" class="form-control" placeholder="Enter city"
+              required />
+            <div *ngIf="registerForm.controls['city'].invalid && registerForm.controls['city'].touched"
+              class="error-message">
+              City is required.
+            </div>
+          </div>
+
+
+          <!-- Address -->
+          <div class="form-group">
+            <label for="address">Address</label>
+            <textarea id="address" formControlName="address" class="form-control" placeholder="Enter address"
+              maxlength="40" required></textarea>
+            <div *ngIf="registerForm.controls['address'].invalid && registerForm.controls['address'].touched"
+              class="error-message">
+              Address is required.
+            </div>
+          </div>
+
+
+          
+
+          <!-- Pin Code -->
+          <div class="form-group">
+            <label for="pinCode">Pin Code</label>
+            <input type="text" id="pinCode" formControlName="pinCode" class="form-control" placeholder="Enter pin code"
+              maxlength="6" required />
+            <div *ngIf="registerForm.controls['pinCode'].invalid && registerForm.controls['pinCode'].touched"
+              class="error-message">
+              Pin Code is required.
+            </div>
+          </div>
+        </div>
+
+        <!-- Profile Image -->
+        <div class="mb-3">
+          <label for="profileImage" class="form-label">Profile Image</label>
+          <input type="file" accept=".jpg, .jpeg, .png" id="profileImage" class="form-control rounded-3"
+            (change)="onImageChange($event)" />
+          <div *ngIf="registerForm.get('profileImage')?.invalid && registerForm.get('profileImage')?.touched"
+            class="text-danger small mt-1">
+            Image is required.
+          </div>
+        </div>
+
+        <!-- Provider Fields (Visible when provider is selected) -->
+        <!-- Provider Fields (Visible when provider is selected) -->
+        <div *ngIf="isProviderSelected">
+          <div class="form-group">
+            <label for="qualification">Qualification</label>
+            <input type="text" id="qualification" formControlName="qualification" class="form-control"
+              placeholder="Enter qualification" maxlength="15" required />
+            <div
+              *ngIf="registerForm.controls['qualification'].invalid && registerForm.controls['qualification'].touched"
+              class="error-message">
+              Qualification is required.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="specializationId">Specialization</label>
+            <select id="specializationId" formControlName="specializationId" class="form-control" required>
+              <option value="" disabled selected>Select Specialization</option>
+              <option *ngFor="let spec of specialization" [value]="spec.id">{{ spec.name }}</option>
+            </select>
+            <div
+              *ngIf="registerForm.controls['specializationId'].invalid && registerForm.controls['specializationId'].touched"
+              class="error-message">
+              Specialization is required.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="registrationNumber">Registration Number</label>
+            <input type="text" id="registrationNumber" formControlName="registrationNumber" class="form-control"
+              placeholder="Enter registration number" maxlength="20" required />
+            <div
+              *ngIf="registerForm.controls['registrationNumber'].invalid && registerForm.controls['registrationNumber'].touched"
+              class="error-message">
+              Registration Number is required.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="visitingCharge">Visiting Charge</label>
+            <input type="text" id="visitingCharge" (keypress)="onKeyPress($event)" maxlength="5"
+              formControlName="visitingCharge" class="form-control" placeholder="Enter visiting charge" required />
+            <div
+              *ngIf="registerForm.controls['visitingCharge'].invalid && registerForm.controls['visitingCharge'].touched"
+              class="error-message">
+              Visiting Charge is required.
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Submit Button -->
+        <div class="form-actions">
+          <button type="submit" class="btn primary-btn">Register</button>
+          <!-- <button type="submit" class="btn primary-btn" [disabled]="registerForm.invalid">Register</button> -->
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+<app-loader></app-loader>

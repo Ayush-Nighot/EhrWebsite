@@ -1,0 +1,112 @@
+<form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
+  <!-- Go Back Button -->
+  <div class="btn-">
+    <button id="card-element" class="btn btn-primary" routerLink="/patient">Go Back</button>
+  </div>
+
+  <!-- Speciality Dropdown -->
+  <div class="form-group">
+    <label for="speciality">Speciality</label>
+    <select formControlName="speciality" (change)="onSpecialityChange($event)">
+      <option value="">Select Speciality</option>
+      <option *ngFor="let speciality of specialties" [value]="speciality.id">
+        {{ speciality.name }}
+      </option>
+    </select>      
+    <div *ngIf="appointmentForm.get('speciality')?.invalid && appointmentForm.get('speciality')?.touched" class="text-danger">
+      Please select a speciality.
+    </div>
+  </div>
+
+  <!-- Provider Dropdown -->
+  <div class="form-group">
+    <label for="provider">Provider</label>
+    <select (change)="onProviderChange($event)" formControlName="providerId">
+      <option value="">Select Provider</option>
+      <option *ngFor="let provider of providers" [value]="provider.id">
+        {{ provider.firstName }}
+      </option>
+    </select>      
+    <div *ngIf="appointmentForm.get('providerId')?.invalid && appointmentForm.get('providerId')?.touched" class="text-danger">
+      Please select a provider.
+    </div>
+  </div>
+
+  <!-- Display Fees -->
+  <div *ngIf="fees !== null" class="form-group">
+    <label for="fees">Provider Fee</label>
+    <input type="text" id="fees" class="form-control" [value]="fees | currency :'INR'" disabled />
+  </div>
+
+  <!-- Appointment Date Picker -->
+  <div class="form-group">
+    <label for="date">Appointment Date</label>
+    <input type="date" formControlName="appointmentDate" id="date" class="form-control" [min]="minDate | date: 'yyyy-MM-dd'">
+    <div *ngIf="appointmentForm.get('appointmentDate')?.invalid && appointmentForm.get('appointmentDate')?.touched" class="text-danger">
+      Please select a valid date.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="time">Appointment Time</label>
+    <input
+      type="time"
+      formControlName="appointmentTime"
+      id="time"
+      class="form-control"
+    />
+    <div
+      *ngIf="
+        appointmentForm.get('appointmentTime')?.errors?.['invalidTime'] &&
+        appointmentForm.get('appointmentTime')?.touched
+      "
+      class="text-danger"
+    >
+      Appointment time must be at least one hour from now.
+    </div>
+    <div
+      *ngIf="
+        appointmentForm.get('appointmentTime')?.invalid &&
+        appointmentForm.get('appointmentTime')?.touched &&
+        !appointmentForm.get('appointmentTime')?.errors?.['invalidTime']
+      "
+      class="text-danger"
+    >
+      Please select a valid time.
+    </div>
+  </div>
+  
+
+  <!-- Chief Complaint -->
+  <div class="form-group">
+    <label for="chiefComplaint">Chief Complaint</label>
+    <textarea formControlName="chiefComplaint" id="chiefComplaint" maxlength="200" class="form-control" rows="3"></textarea>
+    <div *ngIf="appointmentForm.get('chiefComplaint')?.invalid && appointmentForm.get('chiefComplaint')?.touched" class="text-danger">
+      Please enter the chief complaint.
+    </div>
+  </div>
+
+  <!-- Stripe Card Element for Payment -->
+  <div class="form-group">
+    <label for="card-element">Card Details</label>
+    <div id="card-element" class="form-control" #card></div>
+    <div *ngIf="paymentError" class="text-danger">
+      {{ paymentError }}
+    </div>
+  </div>
+
+  <!-- Submit Button -->
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary" [disabled]="appointmentForm.invalid || paymentError">Schedule Appointment</button>
+  </div>
+</form>
+
+<!-- Success/Error Messages -->
+<div *ngIf="appointmentScheduled" class="alert alert-success">
+  <strong>Success!</strong> Your appointment has been scheduled.
+</div>
+
+<div *ngIf="errorOccurred" class="alert alert-danger">
+  <strong>Error!</strong> There was an issue scheduling your appointment.
+</div>
+<app-loader></app-loader>

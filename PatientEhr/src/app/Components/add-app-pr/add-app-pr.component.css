@@ -1,0 +1,56 @@
+/* Global form styles */
+.appointment-form {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .appointment-form .form-label {
+    font-weight: 500;
+  }
+  
+  .appointment-form .form-select, 
+  .appointment-form .form-control, 
+  .appointment-form textarea {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+  }
+  
+  .appointment-form .form-control:focus {
+    border-color: #6c757d;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  .appointment-form .text-danger {
+    font-size: 0.875rem;
+  }
+  
+  .appointment-form button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+  }
+  
+  .appointment-form button:disabled {
+    background-color: #b0bec5;
+  }
+  
+  .alert {
+    border-radius: 5px;
+  }
+  
+  .alert-success {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  
+  .container {
+    max-width: 600px;
+  }
+  

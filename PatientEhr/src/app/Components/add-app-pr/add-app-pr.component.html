@@ -1,0 +1,61 @@
+<form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()" class="appointment-form">
+  <div class="container p-4">
+    <h2 class="text-center mb-4">Schedule Your Appointment</h2>
+
+    <!-- Provider Info -->
+    <div class="mb-3">
+      <label for="provider" class="form-label">Provider</label>
+      <input type="text" class="form-control" [value]="providerDetails.firstName + ' ' + providerDetails.lastName" disabled />
+    </div>
+
+    <!-- Display Provider Fee -->
+    <div *ngIf="providerDetails.fee" class="form-group mb-3">
+      <label for="fees">Provider Fee</label>
+      <input type="text" id="fees" class="form-control" [value]="providerDetails.fee | currency:'INR'" disabled />
+    </div>
+
+    <!-- Appointment Date Picker -->
+    <div class="mb-3">
+      <label for="date" class="form-label">Appointment Date</label>
+      <input type="date" formControlName="appointmentDate" id="date" class="form-control" [min]="minDate | date: 'yyyy-MM-dd'">
+      <div *ngIf="appointmentForm.get('appointmentDate')?.invalid && appointmentForm.get('appointmentDate')?.touched" class="text-danger mt-1">
+        Please select a valid date.
+      </div>
+    </div>
+
+    <!-- Time Picker -->
+    <div class="mb-3">
+      <label for="time" class="form-label">Appointment Time</label>
+      <input type="time" formControlName="appointmentTime" id="time" class="form-control">
+      <div *ngIf="appointmentForm.get('appointmentTime')?.invalid && appointmentForm.get('appointmentTime')?.touched" class="text-danger mt-1">
+        Please select a valid time.
+      </div>
+    </div>
+
+    <!-- Chief Complaint -->
+    <div class="mb-3">
+      <label for="chiefComplaint" class="form-label">Chief Complaint</label>
+      <textarea formControlName="chiefComplaint" id="chiefComplaint" class="form-control" rows="3"></textarea>
+      <div *ngIf="appointmentForm.get('chiefComplaint')?.invalid && appointmentForm.get('chiefComplaint')?.touched" class="text-danger mt-1">
+        Please enter the chief complaint.
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="mb-3 text-center">
+      <button type="submit" class="btn btn-primary">
+        Schedule Appointment
+      </button>
+    </div>
+  </div>
+
+  <!-- Success/Error Messages -->
+  <div *ngIf="appointmentScheduled" class="alert alert-success mt-4">
+    <strong>Success!</strong> Your appointment has been scheduled.
+  </div>
+
+  <div *ngIf="errorOccurred" class="alert alert-danger mt-4">
+    <strong>Error!</strong> There was an issue scheduling your appointment.
+  </div>
+</form>
+<app-loader></app-loader>

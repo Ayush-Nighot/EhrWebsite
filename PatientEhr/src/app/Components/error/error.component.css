@@ -1,0 +1,24 @@
+/* Error Component Container */
+.error-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    text-align: center;
+  }
+  
+  /* Error Title */
+  .error-title {
+    font-size: 100px;
+    font-weight: bold;
+    color: #ff6347;
+    margin-bottom: 20px;
+  }
+  
+  /* Error Message */
+  .error-message {
+    font-size: 24px;
+    color: #555;
+  }
+  
